@@ -1,0 +1,20 @@
+{
+  "specname_colx": [
+    {"seq": "A"},
+    {"size": "H"},
+    {"class": "M"},
+    {"sch": "Q"},
+    {"ins_spec": "U"},
+    {"service": "AB"},
+    {"from": "AP"},
+    {"to": "AZ"},
+    {"dt": "BK"},
+    {"dp": "BN"},
+    {"phase": "BQ"},
+    {"ot": "CD"},
+    {"op": "CG"}
+  ],
+
+  "start_rowx": 5,
+  "end_rowx": 44
+}
