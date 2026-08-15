@@ -8,6 +8,11 @@ class WBWrapper(ABC):
     def sheet_names(self):
         pass
 
+    @abstractmethod
+    def valid_rows(self):
+        pass
+
+
 class SWBWrapper(WBWrapper):
     def __init__(self, wb_path):
         self._book = xlrd.open_workbook(wb_path)
