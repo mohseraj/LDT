@@ -1,19 +1,35 @@
 {
-  "specname_colx": [
-    {"seq": "A"},
-    {"size": "H"},
-    {"class": "M"},
-    {"sch": "Q"},
-    {"ins_spec": "U"},
-    {"service": "AB"},
-    {"from": "AP"},
-    {"to": "AZ"},
-    {"dt": "BK"},
-    {"dp": "BN"},
-    {"phase": "BQ"},
-    {"ot": "CD"},
-    {"op": "CG"}
-  ],
+  "specname_colletter": {
+      "seq": "A",
+      "size": "H",
+      "class": "M",
+      "sch": "Q",
+      "ins_spec": "U",
+      "service": "AB",
+      "from": "AP",
+      "to": "AZ",
+      "dt": "BK",
+      "dp": "BN",
+      "phase": "BQ",
+      "ot": "CD",
+      "op": "CG"
+  },
+
+  "specname_colx": {
+    "seq": 1,
+    "size": 7,
+    "class": 12,
+    "sch": 16,
+    "ins_spec": 20,
+    "service": 27,
+    "from": 40,
+    "to": 51,
+    "dt": 62,
+    "dp": 65,
+    "phase": 68,
+    "ot": 81,
+    "op": 84
+  },
 
   "start_rowx": 5,
   "end_rowx": 44

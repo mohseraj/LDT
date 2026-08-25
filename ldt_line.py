@@ -1,10 +1,8 @@
-"""
-We need a dict where the key is the spec name and the value is the value
-And we need another where the key is the cell index and the value is the spec name
-"""
+
 
 class LDTLine:
     def __init__(self, values):
+        # values = {'seq': '1345', 'size': '4"', ...}
         self.seq = values['seq']
         self.size = values['size']
         self.cls = LineCls(values['class'])
@@ -20,7 +18,6 @@ class LDTLine:
         self.op = values['op']
 
 
-
 class LineCls:
     def __init__(self, name):
         self.name = name
@@ -30,3 +27,8 @@ class LineSch:
     def __init__(self, name):
         self.line = name
         self.wt = 0
+
+
+def create_line(row) -> LDTLine:
+
+    pass
