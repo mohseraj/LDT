@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 from cfg import shared as cfg
 
 
-class WBWrapper(ABC):
+class XLWrapper(ABC):
     @abstractmethod
     def sheet_names(self):
         pass
@@ -14,7 +14,7 @@ class WBWrapper(ABC):
         pass
 
 
-class SWBWrapper(WBWrapper):
+class XLSWrapper(XLWrapper):
     def __init__(self, wb_path):
         self._book = xlrd.open_workbook(wb_path)
         self._active_sheet = self._book.sheet_by_index(0)
@@ -35,8 +35,7 @@ class SWBWrapper(WBWrapper):
         return res
 
 
-
-class SXWBWrapper(WBWrapper):
+class XLSXWrapper(XLWrapper):
     def __init__(self, wb_path):
         self._book = openpyxl.load_workbook(wb_path)
 
@@ -51,6 +50,6 @@ class SXWBWrapper(WBWrapper):
 
 def load_wbs(wb_path):
     if wb_path.suffix == '.xls':
-        return SWBWrapper(wb_path)
+        return XLSWrapper(wb_path)
     else:
-        return SXWBWrapper(wb_path)
+        return XLSXWrapper(wb_path)

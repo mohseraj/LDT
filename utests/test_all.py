@@ -12,9 +12,9 @@ def test_loading_wbs():
     assert 'SA-2824-ENG-xlsx' not in sheet_names
 
 def test_xls_valid_rows():
-    from wb_wrapper import SWBWrapper
+    from wb_wrapper import XLSWrapper
     expected = {'rowx': 6, 'seq': 4772, 'class': '3CS2P', 'dp': 300, 'ot': 125}
-    first_valid_row = SWBWrapper('utests/files/YD736466002XC.xls').valid_rows[1]
+    first_valid_row = XLSWrapper('utests/files/YD736466002XC.xls').valid_rows[1]
     assert first_valid_row['rowx'] == expected['rowx']
     assert first_valid_row['seq'] == expected['seq']
     assert first_valid_row['class'] == expected['class']
