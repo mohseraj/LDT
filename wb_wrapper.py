@@ -48,7 +48,7 @@ class XLSXWrapper(XLWrapper):
         pass
 
 
-def load_wbs(wb_path):
+def create_wbs(wb_path):
     if wb_path.suffix == '.xls':
         return XLSWrapper(wb_path)
     else:

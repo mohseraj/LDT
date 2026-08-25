@@ -10,5 +10,5 @@ class FilesMgr:
 
     @property
     def wbs(self):
-        return [wb_wrapper.load_wbs(path) for path in self._folder_path.glob(self.EXCEL_SUFFIX)]
+        return [wb_wrapper.create_wbs(path) for path in self._folder_path.glob(self.EXCEL_SUFFIX)]
        

@@ -3,7 +3,7 @@ from os import chdir
 
 chdir('..')
 
-def test_loading_wbs():
+def test_create_wbs():
     from files_mgr import FilesMgr
     mgr = FilesMgr(folder_path='utests/files')
     sheet_names = [file.sheet_names[0] for file in mgr.wbs]
