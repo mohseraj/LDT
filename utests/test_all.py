@@ -13,7 +13,7 @@ def test_create_wbs():
 
 def test_xls_valid_rows():
     from wb_wrapper import XLSWrapper
-    expected = {'rowx': 6, 'seq': 4772, 'class': '3CS2P', 'dp': 300, 'ot': 125}
+    expected = {'rowx': 7, 'seq': 4772, 'class': '3CS2P', 'dp': 300, 'ot': 125}
     first_valid_row = XLSWrapper('utests/files/YD736466002XC.xls').valid_rows[1]
     assert first_valid_row['rowx'] == expected['rowx']
     assert first_valid_row['seq'] == expected['seq']

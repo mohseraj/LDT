@@ -28,7 +28,7 @@ class XLSWrapper(XLWrapper):
         res = []
         for rowx in range(cfg.start_rowx, cfg.end_rowx):
             row_values = self._active_sheet.row_values(rowx)
-            rowd = {'rowx': rowx}
+            rowd = {'rowx': rowx+1}
             rowd.update({specname: row_values[colx] for specname, colx in cfg.colx_map.items()})
             res.append(rowd)
 
