@@ -22,5 +22,16 @@ def test_xls_valid_rows():
     assert first_valid_row['ot'] == expected['ot']
 
 
+def test_root_vld():
+    from wb_wrapper import XLSWrapper
+    from vld import RootValidator as rvld
+    valid_rows = XLSWrapper('utests/files/YD736466002XC.xls').valid_rows
+    assert rvld.is_valid(valid_rows[4]) == True
+    assert rvld.is_valid(valid_rows[5]) == False
+    assert rvld.is_valid(valid_rows[37]) == False
+    assert rvld.is_valid(valid_rows[39]) == False
+
+
+
 
 
