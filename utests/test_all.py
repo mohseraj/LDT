@@ -11,25 +11,23 @@ def test_create_wbs():
     assert 'SA-2824-ENG-xlsm' in sheet_names
     assert 'SA-2824-ENG-xlsx' not in sheet_names
 
+
+def test_is_pipeline_row():
+    from vld import is_pipeline_row
+    loaded_rows = [
+        {'rowx': 1, 'seq': 100, 'size': '10"', 'class': '1CS1P', 'sch.': 40, 'service': 'PROCESS (P)', 'from': 'kladsfk', 'to': 'kasdfl'},
+        {'rowx': 2, 'seq': '', 'size': '12"', 'class': '1CS1P', 'sch.': 40, 'service': 'PROCESS (P)', 'from': 'kladsfk', 'to': 'kasdfl'},
+        {'rowx': 1, 'seq': 102, 'size': '10"', 'class': '', 'sch.': 40, 'service': 'PROCESS (P)', 'from': 'kladsfk', 'to': 'kasdfl'},
+    ]
+    assert is_pipeline_row(loaded_rows[0]) == True
+    assert is_pipeline_row(loaded_rows[1]) == False
+
+
 def test_xls_valid_rows():
     from wb_wrapper import XLSWrapper
-    expected = {'rowx': 7, 'seq': 4772, 'class': '3CS2P', 'dp': 300, 'ot': 125}
-    first_valid_row = XLSWrapper('utests/files/YD736466002XC.xls').valid_rows[1]
-    assert first_valid_row['rowx'] == expected['rowx']
-    assert first_valid_row['seq'] == expected['seq']
-    assert first_valid_row['class'] == expected['class']
-    assert first_valid_row['dp'] == expected['dp']
-    assert first_valid_row['ot'] == expected['ot']
+    valid_rows = XLSWrapper('utests/files/YD736466002XC.xls').valid_rows
+    assert len(valid_rows) == 3
 
-
-def test_root_vld():
-    from wb_wrapper import XLSWrapper
-    from vld import RootValidator as rvld
-    rows_before_validation = XLSWrapper('utests/files/YD736466002XC.xls').valid_rows
-    assert rvld.is_valid(rows_before_validation[4]) == True
-    assert rvld.is_valid(rows_before_validation[5]) == False
-    assert rvld.is_valid(rows_before_validation[37]) == False
-    assert rvld.is_valid(rows_before_validation[39]) == False
 
 
 

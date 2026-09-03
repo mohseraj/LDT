@@ -14,8 +14,7 @@ class Config:
 
         self.col_letter_map = self.json['specname_colletter']
         self.colx_map = self.json['specname_colx']
-        self.start_rowx = self.json['start_rowx']
-        self.end_rowx = self.json['end_rowx']
+        self.core_specs = self.json['core_specs']
 
 
 shared = Config()

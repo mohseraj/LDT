@@ -32,5 +32,7 @@
   },
 
   "start_rowx": 5,
-  "end_rowx": 45
+  "end_rowx": 45,
+
+  "core_specs": ["seq", "size", "service"]
 }
