@@ -34,5 +34,6 @@
   "start_rowx": 5,
   "end_rowx": 45,
 
-  "core_specs": ["seq", "size", "service"]
+  "core_specs": ["seq", "size", "service"],
+  "output_header": ["seq", "size", "class", "sch", "ins_spec", "service", "from", "to", "dt", "dp", "phase", "ot", "op"]
 }

@@ -56,3 +56,19 @@ def create_wbs(wb_path):
         return XLSWrapper(wb_path)
     else:
         return XLSXWrapper(wb_path)
+
+
+def combine_wbs(wbs: list[XLWrapper]):
+    #create output workbook -> write the header -> read valid rows -> write them to output
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.append(cfg.output_header)
+    ldt_rows = []
+    for ldt in wbs:
+        ldt_rows.extend(ldt.valid_rows)
+
+    for rowd in ldt_rows:
+        row_data = [rowd[h] for h in cfg.output_header]
+        ws.append(row_data)
+
+    return wb
